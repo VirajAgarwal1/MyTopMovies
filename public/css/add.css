@@ -1,0 +1,159 @@
+* {
+    margin: 0%;
+    padding: 0%;
+    box-sizing: border-box;
+}
+#home_icon {
+    position: absolute;
+    top: 0%;
+    left: 0%;
+}
+    #home_icon svg {
+        width: auto;
+        height: 3.2rem;
+        border: 2px solid black;
+    }
+        #home_icon svg:hover {
+            cursor: pointer;
+        }
+
+
+#search_and_results {
+    margin-top: 3.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    z-index: 1;
+}
+    #search_movie {
+        display: flex;
+        gap: 0.3rem;
+        width: 17rem;
+        border: 1px solid black;
+        padding: 0.2rem;
+    }
+        #search_movie svg {
+            width: auto;
+            height: 2.3rem;
+            fill: red;
+        }
+        #search_word {
+            font-size: 1rem;
+            outline: none;
+            border: none;
+            border-bottom: 1px solid red;
+            width: 80%;
+        }
+            #search_word:hover{
+                border-bottom: 3px solid red;
+            }
+
+    #searched_movies {
+        width: 17rem;
+        border: 1px solid black;
+        margin-top: 2px;
+        background-color: white;
+        position: absolute;
+        top: 2.9rem;
+        max-height: 22.3rem;
+        overflow-y: auto;
+        text-align: center;
+    }
+        .movie_info_in_search {
+            display: flex;
+            align-items: center;
+            padding: 0.2rem;
+            gap: 0.4rem;
+            border-bottom: 1px solid black;
+        }
+            .movie_info_in_search img {
+                width: auto;
+                height: 4rem;
+            }
+            .movie_info_in_search:hover{
+                cursor: pointer;
+            }
+            .movie_info_in_search:last-child {
+                border: 0ch;
+            }
+
+
+
+
+#movie_info {
+    display: flex;
+    gap: 2rem;
+    padding: 1rem;
+    justify-content: center;
+    /* flex-wrap: wrap; */
+    position: relative;
+    top: 3rem;
+}
+@media only screen and (max-width: 700px) {
+    #movie_info {
+        display: flex;
+        gap: 2rem;
+        padding: 1rem;
+        justify-content: center;
+        flex-wrap: wrap;
+        position: relative;
+        top: 3rem;
+    }
+  }
+    #movie_poster img {
+        width: auto;
+        height: 20rem;
+        border: 1px solid black;
+    }
+    #actual_info {
+        max-width: 100ch;
+        font-family: 'Luxurious Roman', cursive;
+        min-width: 26ch;
+    }
+        #line_1 {
+            font-size: 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            margin-bottom: 1rem;
+        }
+        #line_4 {
+            font-size: 1.1rem;
+            display: flex;
+            margin-top: 0.5rem;
+            align-items: flex-end;
+            column-gap: 4rem;
+            row-gap: 0.8rem;
+            font-family: Arial, Helvetica, sans-serif;
+            flex-wrap: wrap;
+        }
+            #line_4 span {
+                display: flex;
+                align-items: center;
+            }
+            #personal_rank_input {
+                min-width: 5rem;
+                width: 20%;
+            }
+        #line_5 {
+            max-width: 90ch;
+            margin-top: 0.5rem;
+            font-size: 1rem;
+        }
+        #line_6 {
+            margin-top: 0.5rem;
+            display: flex;
+            justify-content: center;
+        }
+        #line_6 button[type="submit"]{
+            font-size: 1.5rem;
+            padding: 0.3rem;
+            background-color: #d97373;
+        }
+
+
+
+.hide {
+    display: none;
+}

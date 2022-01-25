@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Top Movies</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Mochiy+Pop+P+One&display=swap');
+    </style>
+    <link rel="stylesheet" href="/css/index.css">
+</head>
+<body onload="UpdateVar()">
+    <div id="nav">
+        <div id="search">
+            <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="#000000"><path d="M0 0h24v24H0V0z" fill="none"/><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg>
+            <input type="text" name="" id="filter" onchange="getFilterValue()">
+        </div>
+
+        <div id="sort">
+            <label for="sort_options">Sort By:</label>
+            <select name="sort_options" id="sort_options" onchange="getSelectedValue()">
+                <option value="rank">Rank</option>
+                <option value="name">Name</option>
+                <option value="stars">Stars</option>
+                <option value="rating">Rating</option>
+            </select>
+        </div>
+        <div id="add">
+            <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="#000000"><path d="M0 0h24v24H0V0z" fill="none"/><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm5 11h-4v4h-2v-4H7v-2h4V7h2v4h4v2z"/></svg>
+            Add a Movie
+        </div>
+    </div>
+
+    <div id="movies">
+
+
+        <% for (let index = 0; index < movies_info.length; index++) { %>
+            <% const movie = movies_info[index]; %>
+            <% img_url = "http://image.tmdb.org/t/p/original" + movie["poster_path"] %>
+            
+        <span class="movie_card" data-movie_id="<%= movie["movie_id"] %>">
+
+            <span class="rank"><%= movie["personal_rank"] %></span>
+
+            <div class="movie_poster">
+                <img src= <%= img_url %> alt="">
+            </div>
+
+            <div class="movie_info">
+                <div class="movie_name"><%= movie["name"] %></div>
+                <div class="ratings">
+                    <span>
+                        <svg xmlns="http://www.w3.org/2000/svg" enable-background="new 0 0 24 24" height="24px" viewBox="0 0 24 24" width="24px" fill="#FFD700"><g><path d="M0,0h24v24H0V0z" fill="none"/><path d="M0,0h24v24H0V0z" fill="none"/></g><g><path d="M12,17.27L18.18,21l-1.64-7.03L22,9.24l-7.19-0.61L12,2L9.19,8.63L2,9.24l5.46,4.73L5.82,21L12,17.27z"/></g></svg>
+                        <%= movie["rating"] %>
+                    </span>
+                    <span>
+                        <svg xmlns="http://www.w3.org/2000/svg" enable-background="new 0 0 24 24" height="24px" viewBox="0 0 24 24" width="24px" fill="#ADD8E6"><g><path d="M0,0h24v24H0V0z" fill="none"/><path d="M0,0h24v24H0V0z" fill="none"/></g><g><path d="M12,17.27L18.18,21l-1.64-7.03L22,9.24l-7.19-0.61L12,2L9.19,8.63L2,9.24l5.46,4.73L5.82,21L12,17.27z"/></g></svg>
+                        <%= movie["personal_rating"] %>
+                    </span>
+                </div>
+            </div>
+
+        </span>
+
+        <%} %>
+
+    </div>
+</body>
+<script src="/js/index.js"></script>
+</html>

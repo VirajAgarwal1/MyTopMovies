@@ -1,0 +1,121 @@
+* {
+    margin: 0%;
+    padding: 0%;
+    box-sizing: border-box;
+}
+
+#home_icon {
+    position: absolute;
+    top: 0%;
+    left: 0%;
+}
+#home_icon svg {
+    width: auto;
+    height: 3.2rem;
+    border: 2px solid black;
+}
+#home_icon svg:hover {
+    cursor: pointer;
+}
+
+#movie_info {
+    display: flex;
+    gap: 2rem;
+    padding: 1rem;
+    justify-content: center;
+    /* flex-wrap: wrap; */
+    position: relative;
+    top: 3rem;
+}
+
+@media only screen and (max-width: 700px) {
+    #movie_info {
+        display: flex;
+        gap: 2rem;
+        padding: 1rem;
+        justify-content: center;
+        flex-wrap: wrap;
+        position: relative;
+        top: 3rem;
+    }
+  }
+
+    #movie_poster img {
+        width: auto;
+        height: 20rem;
+        border: 1px solid black;
+    }
+    #actual_info {
+        max-width: 100ch;
+        font-family: 'Luxurious Roman', cursive;
+        min-width: 30ch;
+    }
+        #line_1 {
+            font-size: 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            margin-bottom: 1rem;
+        }
+            #line_1 svg {
+                width: auto;
+                height: 1rem;
+                position: relative;
+                right: -0.3rem;
+                bottom: -0.1rem;
+            }
+            #notBigEdit {
+                font-size: 1.1rem;
+                text-decoration: underline;
+                min-width: 4rem;
+            }
+
+
+        .genre_tag {
+            background-color: #c1c1c1;
+            padding: 0.2rem;
+            border: 1px solid black;
+        }
+        #line_2 {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.3rem;
+        }
+
+        #line_3 {
+            font-size: 1.1rem;
+            display: flex;
+            margin-top: 0.5rem;
+            align-items: center;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        #line_4 {
+            font-size: 1.1rem;
+            display: flex;
+            margin-top: 0.5rem;
+            align-items: flex-end;
+            column-gap: 4rem;
+            row-gap: 0.8rem;
+            font-family: Arial, Helvetica, sans-serif;
+            flex-wrap: wrap;
+        }
+            #line_4 span {
+                display: flex;
+                align-items: center;
+            }
+
+        #line_5 {
+            max-width: 90ch;
+            margin-top: 1rem;
+            font-size: 1rem;
+        }
+        #line_6 {
+            margin-top: 0.5rem;
+            display: flex;
+            justify-content: space-evenly;
+        }
+        #line_6 button[type="submit"]{
+            font-size: 1.5rem;
+            padding: 0.3rem;
+            background-color: #d97373;
+        }

@@ -1,0 +1,126 @@
+* {
+    margin: 0%;
+    padding: 0%;
+    box-sizing: border-box;
+}
+
+input[type="text"] {
+    outline: none;
+    border: none;
+    border-bottom: 1px solid black;
+    font-size: 1rem;
+}
+
+#nav {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.4rem;
+    font-size: 2rem;
+    font-family: 'Mochiy Pop P One', sans-serif;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+    #search {
+        display: flex;
+    }
+        #search svg {
+            width: auto;
+            height: 2rem;
+            fill: red;
+        }
+
+    #sort {
+        display: flex;
+        align-items: flex-end;
+        gap: 0.5rem;
+    }
+        #sort_options {
+            font-size: 1rem;
+            width: 6rem;
+            height: 2.3rem;
+        }
+
+    #add {
+        display: flex;
+        align-items: flex-end;
+        gap: 0.2rem;
+    }
+        #add svg {
+            width: 2.7rem;
+            height: auto;
+            fill: #ff0000;
+            user-select: none; /* supported by Chrome and Opera */
+            -webkit-user-select: none; /* Safari */
+            -khtml-user-select: none; /* Konqueror HTML */
+            -moz-user-select: none; /* Firefox */
+            -ms-user-select: none; /* Internet Explorer/Edge */
+        }
+        #add svg:hover {
+            transform: scale(1.1);
+        }
+        #add svg:active {
+            transform: scale(1);
+        }
+
+
+#movies {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    padding: 1rem;
+    justify-content: center;
+    max-width: 1029px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+    .movie_card {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        width: min-content;
+        height: min-content;
+    }
+    .movie_card:hover{
+        cursor: pointer;
+    }
+
+        .rank {
+            left: -0.4rem;
+            position: absolute;
+            background-color: red;
+            width: 2rem;
+            display: flex;
+            height: 2rem;
+            border-radius: 50%;
+            align-items: center;
+            justify-content: center;
+            padding: 0.5rem;
+            font-weight: 700;
+            top: -0.4rem;
+            border: 1px solid black;
+            color: white;
+        }
+        #movies .movie_poster img {
+            width: auto;
+            height: 14rem;
+            border: 1px solid black;
+        }
+        .movie_name {
+            font-size: 0.8rem;
+            font-weight: 600;
+            text-align: center;
+        }
+
+        .ratings {
+            display: flex;
+            justify-content: center;
+        }
+        .ratings span {
+            display: flex;
+            width: 30%;
+            align-items: center;
+            justify-content: center;
+        }

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Top Movies</title>
+    <style>@import url('https://fonts.googleapis.com/css2?family=Luxurious+Roman&display=swap');</style>
+    <link rel="stylesheet" href="/css/movie.css">
+</head>
+<body>
+
+    <div id="home_icon">
+        <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="#000000"><path d="M0 0h24v24H0V0z" fill="none"/><path d="M12 5.69l5 4.5V18h-2v-6H9v6H7v-7.81l5-4.5M12 3L2 12h3v8h6v-6h2v6h6v-8h3L12 3z"/></svg>
+    </div>
+
+    <div id="movie_info" data-movie_id=<%= movie["movie_id"] %>>
+        <div id="movie_poster">
+            <% image_url = "https://image.tmdb.org/t/p/original" + movie["poster_path"] %>
+            <img src=<%= image_url %> alt="">
+        </div>
+        <div id="actual_info">
+            <div id="line_1">
+                <span><%= movie["name"] %></span>
+                <span id="notBigEdit">
+                    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="#000000"><path d="M0 0h24v24H0V0z" fill="none"/><path d="M14.06 9.02l.92.92L5.92 19H5v-.92l9.06-9.06M17.66 3c-.25 0-.51.1-.7.29l-1.83 1.83 3.75 3.75 1.83-1.83c.39-.39.39-1.02 0-1.41l-2.34-2.34c-.2-.2-.45-.29-.71-.29zm-3.6 3.19L3 17.25V21h3.75L17.81 9.94l-3.75-3.75z"/></svg>
+                    Edit
+                </span>
+            </div>
+            <div id="line_2">
+            <% for (let index = 0; index < movie["genres"].length; index++) { %>
+                <% const genre = movie["genres"][index]; %>
+                <span class="genre_tag"><%= genre['name'] %></span>
+            <% } %>
+            </div>
+            <div id="line_3">
+                Average Rating :
+                <svg xmlns="http://www.w3.org/2000/svg" enable-background="new 0 0 24 24" height="24px" viewBox="0 0 24 24" width="24px" fill="#FFD700"><g><path d="M0,0h24v24H0V0z" fill="none"/><path d="M0,0h24v24H0V0z" fill="none"/></g><g><path d="M12,17.27L18.18,21l-1.64-7.03L22,9.24l-7.19-0.61L12,2L9.19,8.63L2,9.24l5.46,4.73L5.82,21L12,17.27z"/></g></svg>
+                <%= movie["rating"] %>
+            </div>
+            <!-- Line 3 will only have rating while Line 4 will personal_rank and personal_rating -->
+            <div id="line_4">
+                <span>Personal Rating :
+                    <svg xmlns="http://www.w3.org/2000/svg" enable-background="new 0 0 24 24" height="24px" viewBox="0 0 24 24" width="24px" fill="#ADD8E6"><g><path d="M0,0h24v24H0V0z" fill="none"/><path d="M0,0h24v24H0V0z" fill="none"/></g><g><path d="M12,17.27L18.18,21l-1.64-7.03L22,9.24l-7.19-0.61L12,2L9.19,8.63L2,9.24l5.46,4.73L5.82,21L12,17.27z"/></g></svg>                    
+                    <%= movie["personal_rating"] %>
+                </span>
+                <span>Personal Rank : <%= movie["personal_rank"] %></span>
+            </div>
+            <div id="line_5">
+                <%= movie["overview"] %>
+            </div>
+        </div>
+    </div>
+
+    
+</body>
+<script src="/js/movie.js"></script>
+</html>
